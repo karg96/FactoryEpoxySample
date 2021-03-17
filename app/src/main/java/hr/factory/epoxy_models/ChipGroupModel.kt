@@ -1,6 +1,7 @@
 package hr.factory.epoxy_models
 
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.databinding.ViewDataBinding
 import com.airbnb.epoxy.DataBindingEpoxyModel
@@ -10,8 +11,11 @@ import com.airbnb.epoxy.TypedEpoxyController
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import hr.factory.R
+import hr.factory.app.MyApp
+import hr.factory.controller.EpoxySampleControllerListener
 import hr.factory.databinding.CellChipGroupBinding
 import hr.factory.ui_models.ChipGroupCellData
+import java.security.AccessController.getContext
 
 @EpoxyModelClass
 abstract class ChipGroupModel : DataBindingEpoxyModel() {
@@ -39,6 +43,7 @@ abstract class ChipGroupModel : DataBindingEpoxyModel() {
             chipGroup.addView(chip)
         }
     }
+
 }
 
 fun TypedEpoxyController<*>.addChipGroup(cell: ChipGroupCellData) {

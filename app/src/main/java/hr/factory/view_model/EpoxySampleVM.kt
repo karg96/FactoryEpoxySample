@@ -29,6 +29,7 @@ class EpoxySampleVM : ViewModel(), EpoxySampleControllerListener, ToolbarCallbac
 
     override fun onAddToCartClick() {
         Log.i("EpoxySampleVM", "onAddToCartClick")
+
     }
 
     override fun onDecreaseItemCountClick() {
@@ -50,6 +51,11 @@ class EpoxySampleVM : ViewModel(), EpoxySampleControllerListener, ToolbarCallbac
 
     override fun onRelatedItemClick(itemId: Int) {
         Log.i("EpoxySampleVM", "onRelatedItemClick, itemId: $itemId")
+    }
+
+    override fun onChipItemClick() {
+        Log.i("EpoxySampleVM", "onChipItemClick: ")
+
     }
 
     private fun setUI() {

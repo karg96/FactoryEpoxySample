@@ -5,4 +5,5 @@ interface EpoxySampleControllerListener {
     fun onDecreaseItemCountClick()
     fun onAddToCartClick()
     fun onRelatedItemClick(itemId: Int)
+    fun onChipItemClick()
 }

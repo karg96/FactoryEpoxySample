@@ -1,16 +1,22 @@
 package hr.factory.fragment
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import hr.factory.R
+import hr.factory.app.MyApp
 import hr.factory.controller.EpoxySampleController
 import hr.factory.databinding.FragmentEpoxySampleBinding
+import hr.factory.ui_models.ChipGroupCellData
 import hr.factory.view_model.EpoxySampleVM
+import kotlin.math.log
 
 class EpoxySampleFragment : Fragment() {
     private lateinit var binding: FragmentEpoxySampleBinding
@@ -38,6 +44,7 @@ class EpoxySampleFragment : Fragment() {
         viewModel.ui.observe(viewLifecycleOwner, Observer {
             it?.apply {
                 controller.setData(this)
+                Log.e(TAG, "observeUI: ${this.filterIsInstance<ChipGroupCellData>()?.get(0)}" )
             }
         })
     }
